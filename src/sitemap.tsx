@@ -11,17 +11,17 @@ function Site({loc, lastmod, changefreq, priority}:{loc: string, lastmod?: strin
   </url>
 }
 
-export function Sitemap({routes}:{routes: string[]}) {
+export function Sitemap({origin, routes}:{origin: string, routes: string[]}) {
   let date = new Date().toISOString()
   let xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   let xhtml="http://www.w3.org/1999/xhtml"
   return <urlset xmlns={xmlns} xmlns:xhtml={xhtml}>
-    {routes.map((route)=><Site loc={route} lastmod={date} />)}
+    {routes.map((route)=><Site loc={origin+route} lastmod={date} />)}
   </urlset>
 }
 
-export function writeSitemap(rootDir: string, routes: string[]){
-  let sitemap = <Sitemap routes={routes} />
+export function writeSitemap(rootDir: string, origin: string, routes: string[]){
+  let sitemap = <Sitemap origin={origin} routes={routes} />
   let doctype = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
   return writeStaticFile(rootDir + "/sitemap.xml", doctype + sitemap.outerHTML)
 }
