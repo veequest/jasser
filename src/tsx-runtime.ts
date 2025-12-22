@@ -1,16 +1,4 @@
 
-function initDocument(){
-  if(typeof document === 'undefined'){
-    let jsdom = require("jsdom")
-    let { JSDOM } = jsdom;
-    let dom = new JSDOM('')
-    global.document = dom.window.document
-    global.window = dom.window
-  }
-}
-
-initDocument()
-
 function formatStyle(value: object) {
   function f([k, v]: [string, any]){
     return `${k.replace(
