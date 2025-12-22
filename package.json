@@ -1,6 +1,6 @@
 {
   "name": "jasser",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A SSG(Static Site Generation) tool",
   "main": "./src/index.ts",
   "keywords": ["dom", "html", "ssg", "jsx", "tsx"],

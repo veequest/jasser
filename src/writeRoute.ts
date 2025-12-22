@@ -16,9 +16,13 @@ export async function writeStaticFile(filePath: string, content: string): Promis
   }
 }
 
+export function toHTML(dom: HTMLElement){
+  return "<!DOCTYPE html>" + dom.outerHTML
+}
+
 export async function writeRouteHtml(rootDir: string, routePath: string, dom: HTMLElement): Promise<string> {
   let filePath = rootDir + routePath
-  let content = "<!DOCTYPE html>" + dom.outerHTML
+  let content = toHTML(dom)
   await writeStaticFile(filePath, content)
   return routePath
 }
