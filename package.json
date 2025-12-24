@@ -13,10 +13,9 @@
     "build": "tsc"
   },
   "dependencies": {
-    "jsdom": "^26.0.0"
+    "linkedom": "^0.18.12"
   },
   "devDependencies": {
-    "@types/jsdom": "^21.1.7"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

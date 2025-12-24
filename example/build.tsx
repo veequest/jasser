@@ -1,5 +1,6 @@
 
 import { createElement, writeRouteHtml } from '../src'
+import { initNode } from '../src/init-node'
 import { DownloadPage } from './download'
 import { IntroPage } from './intro'
 
@@ -13,4 +14,5 @@ function all(){
   writeLang(rootDir)
 }
 
+initNode()
 all()
