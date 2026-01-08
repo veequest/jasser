@@ -1,12 +1,18 @@
 {
   "name": "jasser",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "A SSG(Static Site Generation) tool",
-  "keywords": ["dom", "html", "ssg", "jsx", "tsx"],
+  "keywords": [
+    "dom",
+    "html",
+    "ssg",
+    "jsx",
+    "tsx"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mindChickey/jasser"
+    "url": "git+https://github.com/mindChickey/jasser.git"
   },
   "type": "module",
   "main": "./dist/index.js",
@@ -28,9 +34,15 @@
   "dependencies": {
     "linkedom": "^0.18.12"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "peerDependencies": {
     "typescript": "^5.0.0"
-  }
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "src",
+    "tsconfig.json"
+  ]
 }
