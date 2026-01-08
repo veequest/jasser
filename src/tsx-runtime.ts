@@ -35,7 +35,8 @@ function appendChild(parent: HTMLElement, child: any) {
 
 export function createElement(tag: any, props?: object, ...children: any[]): HTMLElement {
   if (typeof tag === 'function') {
-    let props1 = children.length ? {...props, children} : props
+    const children1 = children.length === 1 ? children[0] : children
+    const props1 = { ...props, children: children1 }
     return tag(props1) as HTMLElement
   } else {
     let element = document.createElement(tag) as HTMLElement
