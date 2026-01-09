@@ -1,7 +1,7 @@
 
 export { createElement } from './tsx-runtime'
 export { writeStaticFile, writeRouteHtml, toHTML } from './writeRoute'
-export { Sitemap, writeSitemap } from './sitemap'
+export { Sitemap, toXML, writeSitemap } from './sitemap'
 export { type OptionT, Select, readContent } from './widget'
 export { Tabs } from './tabs'
 
