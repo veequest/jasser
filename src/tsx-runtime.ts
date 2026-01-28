@@ -14,7 +14,7 @@ function handleProp(element: HTMLElement, prop: [string, any]) {
   if (name === 'html') {
     element.innerHTML = value
   } else if (name === 'class') {
-    element.className += value.toString()
+    element.className += ' ' + value.toString()
   } else if (name === 'style' && typeof value === 'object') {
     const styleString = formatStyle(value)
     element.setAttribute('style', styleString)
@@ -24,7 +24,7 @@ function handleProp(element: HTMLElement, prop: [string, any]) {
 }
 
 function appendChild(parent: HTMLElement, child: any) {
-  if(child === undefined){
+  if (child === undefined || child === null || typeof child === 'boolean') {
   } else if (Array.isArray(child)){
     child.forEach((nestedChild) => appendChild(parent, nestedChild))
   } else {
@@ -39,6 +39,7 @@ export function createElement(tag: any, props?: object, ...children: any[]): HTM
     const props1 = { ...props, children: children1 }
     return tag(props1) as HTMLElement
   } else {
+    // Tips: need initNode() in nodejs
     let element = document.createElement(tag) as HTMLElement
     Object.entries(props || {}).forEach((prop) => handleProp(element, prop))
     children.forEach((child) => appendChild(element, child))

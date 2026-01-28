@@ -4,6 +4,7 @@ export { writeStaticFile, writeRouteHtml, toHTML } from './writeRoute'
 export { Sitemap, toXML, writeSitemap } from './sitemap'
 export { type OptionT, Select, readContent } from './widget'
 export { Tabs } from './tabs'
+export { initNode } from './init-node'
 
 declare global {
   namespace JSX {

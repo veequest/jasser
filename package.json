@@ -22,10 +22,6 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
-    },
-    "./init-node": {
-      "types": "./dist/init-node.d.ts",
-      "import": "./dist/init-node.js"
     }
   },
   "scripts": {
